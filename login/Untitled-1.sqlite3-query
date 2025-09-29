@@ -1,0 +1,15 @@
+-- database: c:\Users\Windows\Downloads\projects_scripts\Login_Python\Backedn\poseidonF.db
+
+SELECT * FROM "table-name";
+CREATE TABLE usuarios (
+                username TEXT PRIMARY KEY,
+                email TEXT,
+                full_name TEXT,
+                age INTEGER,
+                role TEXT,
+                is_active INTEGER,
+                last_login TEXT,
+                avatar_path TEXT
+            )
+;
+SELECT * FROM usuarios
