@@ -2,28 +2,32 @@
 import tkinter as tk
 import customtkinter as ctk
 
-from login import LoginApp
-<<<<<<< HEAD
-from modules.administrador import AdministradorUsuarios
+from login import LoginModerno   # Importar tu login
+from dashboard import Dashboard  # Importar el Dashboard
+
+
+def main():
+    # Configuración de CustomTkinter
+    ctk.set_appearance_mode("dark")
+    ctk.set_default_color_theme("dark-blue")
+
+    # Crear la ventana raíz de Tkinter
+    root = tk.Tk()
+    root.withdraw()  # Ocultar la ventana raíz
+
+    # Crear login
+    login = LoginModerno(root)
+
+    # Sobrescribir el método para abrir el dashboard al iniciar sesión
+    def abrir_dashboard():
+        login.destroy()
+        dashboard = Dashboard()
+        dashboard.mainloop()
+
+    login.to_dashboard = abrir_dashboard
+
+    login.mainloop()
+
 
 if __name__ == "__main__":
-    admin_usuarios = AdministradorUsuarios()  # Instancia del Administrador de Usuarios
-    app = LoginApp(admin_usuarios)  # Pasamos el administrador de usuarios a la app
-    app.mainloop()
-
-
-
-
-=======
-from modules.UserActivityDashboard import UserActivityDashboard
-from modules.dashboard import Dashboard
-from modules.user_Info import UserProfile, UserProfileWindow
-from login.login import LoginModerno
-
-
-if __name__ == "__main__":
-    admin_usuarios = UserActivityDashboard()  # Instancia del Administrador de Usuarios
-    app = LoginModerno(admin_usuarios)  # Pasamos el administrador de usuarios a la app
-    app.mainloop()
-
->>>>>>> db887b8 (Actualizando interfaces de usuario colores y funciones)
+    main()

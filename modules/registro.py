@@ -44,8 +44,14 @@ class RegistroApp(ct.CTk):
         self.confirm_password_entry.pack()
 
         # Botón Registrar
-        self.register_button = ct.CTkButton(self, text="Registrar", font=fuente,
-                                            fg_color="#2A9D8F", hover_color="#21867A", command=self.register_user)
+        self.register_button = ct.CTkButton(
+            self,
+            text="Registrar",
+            font=fuente,
+            fg_color="#2A9D8F",
+            hover_color="#21867A",
+            command=self.register_user
+        )
         self.register_button.pack(pady=25)
 
     def register_user(self):
@@ -61,15 +67,12 @@ class RegistroApp(ct.CTk):
             messagebox.showerror("Registro fallido", "Las contraseñas no coinciden.")
             return
 
-<<<<<<< HEAD
         if self.admin_usuarios.registrar_usuario(username, password):
-=======
-        if self.admin_usuarios.register_user(username, password):  # Método para registrar el usuario
->>>>>>> db887b8 (Actualizando interfaces de usuario colores y funciones)
-            messagebox.showinfo("Éxito", "¡Usuario registrado correctamente!")
-            self.destroy()
-        else:
-            messagebox.showerror("Registro fallido", "¡El nombre de usuario ya existe!")
+            if self.admin_usuarios.register_user(username, password):  # Método para registrar el usuario
+                messagebox.showinfo("Éxito", "¡Usuario registrado correctamente!")
+                self.destroy()
+            else:
+                messagebox.showerror("Registro fallido", "¡El nombre de usuario ya existe!")
 
 # Ejecución de prueba
 if __name__ == "__main__":
