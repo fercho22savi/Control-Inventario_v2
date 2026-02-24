@@ -65,6 +65,6 @@ Los módulos deben ser desarrollados y mantenidos en sus archivos correspondient
 
 ✍️ Autor
 Fernando saldaña
-YouTuber y desarrollador 
+Desarrollador 
 
 
