@@ -1,70 +1,85 @@
-# 📦 Sistema de Control de Inventario
+# 📦 Sistema de Control de Inventario (Python & SQLite)
 
-Este repositorio contiene un sistema de gestión de inventario con interfaz gráfica, desarrollado en Python utilizando `CustomTkinter`. El sistema está diseñado para administrar **clientes**, **proveedores** y **productos** desde un panel central o _dashboard_.
+Este repositorio contiene un sistema integral de gestión de inventario con una interfaz gráfica (GUI) moderna, desarrollado en **Python** utilizando la librería `CustomTkinter`. 
 
----
-
-## 🎯 Funcionalidades
-_ ** Login
-- **Dashboard moderno** con diseño oscuro y transparente.(Administra tres tipos de usuario)
-- Módulo de **Clientes**.
-- Módulo de **Proveedores**.
-- Módulo de **Productos**.
-- Navegación fluida entre módulos.
-- Botones de funciones y salida para cerrar la aplicación.
-- Base de datos sqLITE
+El sistema permite administrar de forma centralizada **clientes**, **proveedores** y **productos** a través de un panel de control inteligente.
 
 ---
 
-## 🖥️ Tecnologías utilizadas
+## 🎯 Funcionalidades Principales
 
-- Python 3
-- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) (para una interfaz moderna y personalizable)
-- Estructura modular
-- Base de datos sqLITE
+*   🔐 **Login de Acceso:** Sistema de seguridad con gestión de 3 tipos de roles de usuario.
+*   📊 **Dashboard Moderno:** Interfaz con diseño oscuro, efectos de transparencia y navegación intuitiva.
+*   📦 **Gestión de Módulos:**
+    *   **Clientes:** Control detallado de base de datos de clientes.
+    *   **Proveedores:** Administración de cadena de suministro.
+    *   **Productos:** Control de stock y catálogos.
+*   🔄 **Navegación Fluida:** Transiciones dinámicas entre módulos sin abrir múltiples ventanas.
+*   📂 **Persistencia de Datos:** Integración completa con **SQLite** para almacenamiento local ligero y eficiente.
 
 ---
 
-## 📁 Estructura del proyecto
+## 🖥️ Tecnologías Utilizadas
 
-## Requisitos:
-## Instala los requisitos (si no tienes CustomTkinter):
+*   **Lenguaje:** Python 3.x
+*   **GUI:** [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) (Evolución moderna de Tkinter).
+*   **Base de Datos:** SQLite.
+*   **Visualización:** Matplotlib & Mpl_toolkits (Gráficos 2D y 3D).
+*   **Procesamiento:** Numpy.
+*   **Imágenes:** Pillow (PIL).
 
-pip install customtkinter (Interfaz grafica python)
-pip3 install pillow (Libreria python para trabajar con imagenes)
-pip install python-dotenv (Entorno virtual)
-pip install numpy (Manejo de arrays y matrices)
-pip install matplotlib (libreria para genera graficos y visualizaciones de datos)
-mpl_toolkits.mplot3d (herramienta integrada a matplotlib para 3d)
+---
 
-🧠 Sobre el código
-El archivo dashboard.py contiene la clase principal Dashboard, 
-que representa la ventana principal con botones para abrir cada uno de los módulos del sistema. 
-Cada botón llama a una clase distinta para manejar las operaciones específicas:
+## ⚙️ Instalación y Requisitos
 
-SuppliersApp para proveedores.
-ClientsApp para clientes.
-ProductApp para productos.
-registro.
-administrador
-user_info
-user_Profile_model
-log_manager
-UserActivityDashboard
-dashboard
+Para ejecutar este proyecto, asegúrate de tener instaladas las siguientes dependencias:
 
+```bash
+# Instalación de la interfaz gráfica moderna
+pip install customtkinter
 
+# Librería para manejo de imágenes
+pip install pillow
 
-Al hacer clic en un botón, se oculta el dashboard actual y se muestra el módulo correspondiente,
- permitiendo al usuario trabajar de forma específica y luego regresar al panel general.
+# Manejo de variables de entorno
+pip install python-dotenv
 
-📌 Notas adicionales
-El sistema utiliza set_appearance_mode("dark") y set_default_color_theme("dark-blue") para una experiencia visual moderna.
+# Procesamiento de datos y gráficos
+pip install numpy matplotlib
+```
 
-Los módulos deben ser desarrollados y mantenidos en sus archivos correspondientes para asegurar una buena organización.
+---
 
-✍️ Autor
-Fernando saldaña
-Desarrollador 
+## 🧠 Sobre la Arquitectura del Código
 
+El sistema sigue una lógica modular para facilitar el mantenimiento. El archivo central es `dashboard.py`, que gestiona la clase principal `Dashboard`.
 
+### Flujo de Navegación:
+Cuando el usuario interactúa con el menú lateral, el sistema oculta el panel actual y llama a las clases específicas sin cerrar la aplicación principal:
+*   `SuppliersApp`: Módulo de proveedores.
+*   `ClientsApp`: Módulo de clientes.
+*   `ProductApp`: Módulo de productos.
+*   `UserActivityDashboard`: Monitoreo de actividad y logs.
+
+### Estructura de Clases Internas:
+*   **registro / administrador:** Gestión de permisos y nuevos usuarios.
+*   **user_info / user_Profile_model:** Manejo de perfiles y datos del usuario actual.
+*   **log_manager:** Registro de eventos del sistema para auditoría.
+
+---
+
+## 📌 Notas de Diseño
+
+Para garantizar una experiencia visual "Premium", el sistema está configurado por defecto con:
+*   **Apariencia:** `set_appearance_mode("dark")`
+*   **Tema de color:** `set_default_color_theme("dark-blue")`
+
+---
+
+## ✍️ Autor
+**Fernando Saldaña**  
+*Desarrollador de Software*
+
+---
+
+⭐ **¿Te gusta este proyecto?** ¡Dale una estrella al repositorio y compártelo!
